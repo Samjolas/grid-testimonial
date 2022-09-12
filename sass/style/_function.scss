@@ -2,5 +2,5 @@
 
 
 
-$color-main: opacify(a.$color-accent, .7);
-$color-sub: opacify(a.$color-accent, .5);
+$color-main: rgba(a.$color-accent, .7);
+$color-sub: rgba(a.$color-accent, .5);

@@ -1,2 +1,86 @@
 @use 'variables' as a;
 @use 'function' as f;
+.daniel {
+  background: a.$color-box1;
+  grid-area: daniel;
+}
+.jonathan {
+  background: a.$color-box2;
+  grid-area: jonathan;
+}
+
+.patrick {
+  background: a.$color-box4;
+  grid-area: patrick;
+}
+.jeanette {
+  grid-area: jeanette;
+}
+.kira {
+  grid-area: kira;
+}
+.jeanette,
+.kira {
+  background: a.$color-box3;
+  color: a.$color-box2;
+  .testimonial__description {
+    color: rgba(a.$color-box2, .5);
+  }
+  &>.testimonial__content {
+    color: rgba(a.$color-box2, .7);
+  }
+}
+
+.box {
+  max-width: 111rem;
+  width: calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 'daniel daniel jonathan kira' 'jeanette patrick patrick kira';
+  gap: 2rem;
+}
+.testimonial {
+  border-radius: 1rem;
+  padding: 3rem;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  &__head {
+    display: flex;
+    gap: 1rem;
+  }
+  &__img {
+    border-radius: 50%;
+    width: 3rem; height: 3rem;
+    border: .2rem solid a.$color-border;
+  }
+  &__id {
+    display: grid;
+    font-size: 1rem;
+  }
+  &__description {
+    color: f.$color-sub;
+  }
+  &__summary {
+    font-size: a.$fs-main;
+    font-weight: a.$fw-600;
+    z-index: 1;
+  }
+  &__content {
+    font-size: a.$fs-sub;
+    color: f.$color-main;
+  }
+  &__icon {
+    position: absolute;
+    right: 15%;
+  }
+}
+
+@media (max-width: 1110px) {
+  .box {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'daniel' 'jonathan' 'jeanette' 'patrick' 'kira';
+  }
+}
+
+
