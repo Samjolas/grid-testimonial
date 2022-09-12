@@ -1,0 +1,6 @@
+@use 'variables' as a;
+
+
+
+$color-main: opacify(a.$color-accent, .7);
+$color-sub: opacify(a.$color-accent, .5);
